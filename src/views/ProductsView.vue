@@ -1,17 +1,17 @@
 <template>
     <div class="position-relative d-flex align-items-center justify-content-center" style="min-height: 400px;">
       <div class="position-absolute" style="top:0; bottom: 0; left: 0; right: 0; background-image: url(https://images.unsplash.com/photo-1480399129128-2066acb5009e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80); background-position: center center; opacity: 0.1;"></div>
-      <h2 class="fw-bold">Lorem ipsum.</h2>
+      <h2 class="fw-bold">產品列表</h2>
     </div>
     <div class="container mt-md-5 mt-3 mb-7">
       <div class="row">
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <div class="accordion border border-bottom border-top-0 border-start-0 border-end-0 mb-3" id="accordionExample">
             <div class="card border-0">
               <div class="card-header px-0 py-4 bg-white border border-bottom-0 border-top border-start-0 border-end-0 rounded-0" id="headingOne" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                 <div class="d-flex justify-content-between align-items-center pe-1">
                   <h4 class="mb-0">
-                    Lorem ipsum
+                    產品分類
                   </h4>
                   <i class="fas fa-chevron-down"></i>
                 </div>
@@ -19,11 +19,11 @@
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="card-body py-0">
                   <ul class="list-unstyled">
-                    <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
-                    <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
-                    <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
-                    <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
-                    <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
+                    <li><a href="#" class="py-2 d-block text-muted">美食</a></li>
+                    <li><a href="#" class="py-2 d-block text-muted">動物</a></li>
+                    <li><a href="#" class="py-2 d-block text-muted">書籍</a></li>
+                    <li><a href="#" class="py-2 d-block text-muted">電腦</a></li>
+                    <li><a href="#" class="py-2 d-block text-muted">房地產</a></li>
                   </ul>
                 </div>
               </div>
@@ -40,7 +40,7 @@
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="card-body py-0">
                   <ul class="list-unstyled">
-                    <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
+                    <li><a href="#" class="py-2 d-block text-muted">Lorem aaaa</a></li>
                     <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
                     <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
                     <li><a href="#" class="py-2 d-block text-muted">Lorem ipsum</a></li>
@@ -71,8 +71,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-8">
+        </div> -->
+        <div class="col-md-12">  <!-- 原尺寸 col-md-8 -->
           <div class="row rows-cols-1 row-cols-md-2 row-cols-lg-4">
             <div class="col" v-for="product in products" :key="product.id">
               <div class="card border-0 mb-4 position-relative position-relative">
@@ -95,7 +95,6 @@
                 </div>
               </div>
             </div>
-
           </div>
           <nav class="d-flex justify-content-center">
             <ul class="pagination">
@@ -105,8 +104,8 @@
                 </a>
               </li>
               <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
@@ -123,7 +122,8 @@
 export default {
   data () {
     return {
-      products: []
+      products: [],
+      pagination: {}
     }
   },
   methods: {
@@ -133,6 +133,7 @@ export default {
         .then(res => {
           console.log(res)
           this.products = res.data.products
+          this.pagination = res.data.pagination
         })
     }
   },
