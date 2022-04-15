@@ -1,14 +1,13 @@
 <template>
     <div class="container">
       <div class="mt-3">
-        <h3 class="mt-3 mb-4">購物車</h3>
+        <h3 class="mt-3 mb-4">購物清單</h3>
         <div class="row">
           <div class="col-md-8">
             <table class="table">
               <thead>
                 <tr>
                   <th scope="col" class="border-0 ps-0">產品</th>
-                  <!-- <th scope="col" class="border-0">調整</th> -->
                   <th scope="col" class="border-0">數量</th>
                   <th scope="col" class="border-0">價錢</th>
                 </tr>
@@ -21,15 +20,17 @@
                   </th>
                   <td class="border-0 align-middle" style="max-width: 160px;">
                     <div class="input-group pe-5">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-dark border-0 py-2" type="button" id="button-addon1">
+                      <div class="input-group-prepend numChangeField">
+                        <button class="btn btn-outline-dark border-0 py-2 addItemBtn"
+                          @click="addCartQty(cart.product.id, cart.qty)" type="button" id="button-addon1">
                           <i class="bi bi-caret-up-fill"></i>
                         </button>
                       </div>
                       <input type="text" class="form-control border-0 text-center my-auto shadow-none" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"
                         :value="cart.qty">
                       <div class="input-group-append">
-                        <button class="btn btn-outline-dark border-0 py-2" type="button" id="button-addon2">
+                        <button class="btn btn-outline-dark border-0 py-2 reduceItemBtn"
+                          @click="reduceCartQty(cart.product.id, cart.qty, cart.id)" type="button" id="button-addon2">
                           <i class="bi bi-caret-down-fill"></i>
                         </button>
                       </div>
@@ -38,37 +39,8 @@
                   <td class="border-0 align-middle"><p class="mb-0 ms-auto">NT${{cart.total}}</p></td>
                   <td class="border-0 align-middle"><i class="fas fa-times"></i></td>
                 </tr>
-                <!-- <tr class="border-bottom">
-                  <th scope="row" class="border-0 px-0 font-weight-normal py-4">
-                    <img src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80" alt="" style="width: 72px; height: 72px; object-fit: cover;">
-                    <p class="mb-0 fw-bold ms-3 d-inline-block">Lorem ipsum</p>
-                  </th>
-                  <td class="border-0 align-middle" style="max-width: 160px;">
-                    <div class="input-group pe-5">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-dark border-0 py-2" type="button" id="button-addon1">
-                          <i class="fas fa-minus"></i>
-                        </button>
-                      </div>
-                      <input type="text" class="form-control border-0 text-center my-auto shadow-none" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value="1">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-dark border-0 py-2" type="button" id="button-addon2">
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="border-0 align-middle"><p class="mb-0 ms-auto">NT$12,000</p></td>
-                  <td class="border-0 align-middle"><i class="fas fa-times"></i></td>
-                </tr> -->
               </tbody>
             </table>
-            <!-- <div class="input-group w-50 mb-3">
-              <input type="text" class="form-control rounded-0 border-bottom border-top-0 border-start-0 border-end-0 shadow-none" placeholder="Coupon Code" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-outline-dark border-bottom border-top-0 border-start-0 border-end-0 rounded-0" type="button" id="button-addon2"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div> -->
           </div>
           <div class="col-md-4">
             <div class="border p-4 mb-4">
@@ -76,42 +48,23 @@
               <table class="table text-muted border-bottom">
                 <tbody>
                   <tr>
-                    <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">Subtotal</th>
+                    <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">小計</th>
                     <td class="text-end border-0 px-0 pt-4">NT${{total.total}}</td>
                   </tr>
                   <tr>
-                    <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">Payment</th>
-                    <td class="text-end border-0 px-0 pt-0 pb-4">ApplePay</td>
+                    <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">運費</th>
+                    <td class="text-end border-0 px-0 pt-0 pb-4">NT$30</td>
                   </tr>
                 </tbody>
               </table>
               <div class="d-flex justify-content-between mt-4">
                 <p class="mb-0 h4 fw-bold">Total</p>
-                <p class="mb-0 h4 fw-bold">NT${{total.final_total}}</p>
+                <p class="mb-0 h4 fw-bold">NT${{total.final_total+30}}</p>
               </div>
               <router-link class="btn btn-dark w-100 mt-4" to="/checkout">填寫寄送資料</router-link>
             </div>
           </div>
         </div>
-        <!-- <div class="my-5">
-          <h3 class="fw-bold">產品圖片與價錢</h3>
-          <div class="swiper-container mt-4 mb-5">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="card border-0 mb-4 position-relative position-relative">
-                  <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="card-img-top rounded-0" alt="...">
-                  <a href="#" class="text-dark">
-                  </a>
-                  <div class="card-body p-0">
-                    <h4 class="mb-0 mt-3"><a href="#">Lorem ipsum</a></h4>
-                    <p class="card-text mb-0">NT$1,080 <span class="text-muted "><del>NT${{total.total}}</del></span></p>
-                    <p class="text-muted mt-3"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 </template>
@@ -134,6 +87,36 @@ export default {
           this.total = res.data.data
           console.log(this.total)
         })
+    },
+    addCartQty (id, qty) {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      const data = {
+        product_id: id,
+        qty: 1
+      }
+      this.$http.post(url, { data }).then((res) => {
+        console.log(res)
+        this.getCartsData()
+      })
+    },
+    reduceCartQty (id, qty, orderID) {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      const data = {
+        product_id: id,
+        qty: -1
+      }
+      if ((qty - 1) > 0) {
+        this.$http.post(url, { data }).then((res) => {
+          console.log(res)
+          this.getCartsData()
+        })
+      } else {
+        alert('購物品項即將被刪除')
+        this.$http.delete(`${url}/${orderID}`).then((res) => {
+          console.log(res)
+          this.getCartsData()
+        })
+      }
     }
   },
   mounted () {

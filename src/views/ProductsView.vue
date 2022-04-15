@@ -1,7 +1,9 @@
 <template>
     <div class="position-relative d-flex align-items-center justify-content-center" style="min-height: 400px;">
-      <div class="position-absolute" style="top:0; bottom: 0; left: 0; right: 0; background-image: url(https://images.unsplash.com/photo-1480399129128-2066acb5009e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80); background-position: center center; opacity: 0.1;"></div>
-      <h2 class="fw-bold">產品列表</h2>
+      <div class="position-absolute" style="top:0; bottom: 0; left: 0; right: 0;
+      background-image: url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/179799063_130125802469468_1661810926114311187_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=1mTUrlKirRIAX-Qd-r2&_nc_ht=scontent-tpe1-1.xx&oh=00_AT_iPTgHtw5ZYJzBssnQOeF2MTU3Ha_BwsrxOdQIMA2-Og&oe=627F8A63);
+      background-position: center center; opacity: 0.5; background-repeat:no-repeat; background-size:cover;"></div>
+      <h2 class="fw-bold">傳情小物</h2>
     </div>
     <div class="container mt-md-5 mt-3 mb-7">
       <div class="row">
@@ -96,23 +98,7 @@
               </div>
             </div>
           </div>
-          <nav class="d-flex justify-content-center">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+
         </div>
       </div>
     </div>
