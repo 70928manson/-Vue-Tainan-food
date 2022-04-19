@@ -32,12 +32,12 @@
         </div> -->
         <div class="col-md-12">  <!-- 原尺寸 col-md-8 -->
           <div class="row rows-cols-1 row-cols-md-2 row-cols-lg-4">
-            <div class="col" v-for="product in products" :key="product.id">
+            <div class="col-md-6" v-for="product in products" :key="product.id">
               <div class="card border-0 mb-4 position-relative position-relative">
                 <div :style="{backgroundImage: `url(${product.imageUrl})`}"
-            style="height: 200px;
-            background-size: cover;
-            background-position: center center"
+                  style="height: 200px;
+                   background-size: cover;
+                   background-position: center center"
                 ></div>
                 <!-- <img :src="product.imageUrl" alt="..."> -->
                 <a href="#" class="text-dark">
