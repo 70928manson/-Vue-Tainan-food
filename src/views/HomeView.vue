@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div class="container wow fadeIn" id="test" style="font-family: 'Noto Sans TC', cursive, '微軟雅黑';">
+  <div class="container wow fadeIn" data-wow-delay="0.1s" id="test" style="font-family: 'Noto Sans TC', cursive, '微軟雅黑';">
       <div class="row mt-5">
         <div class="col-md-4 mt-md-4">
           <div class="card border-0 mb-4">
@@ -72,7 +72,7 @@
       </div>
   </div>
   <div class="mt-7" style="background-color: #fff7eb; font-family: 'Noto Sans TC', cursive, '微軟雅黑';">
-      <div class="container wow fadeIn">
+      <div class="container wow fadeIn " data-wow-delay="0.45s">
         <div class="row justify-content-center py-7">
           <div class="col-md-6 text-center">
             <h3>《歷史傳情，心繫於你》</h3>
@@ -92,7 +92,7 @@
         <div class="col-md-6">
           <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/170602477_122099629938752_2815713760278194292_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=YxhRIVUNYmgAX9c9gWY&_nc_ht=scontent-tpe1-1.xx&oh=00_AT9PhOgq6RTrLQ3Jc2OsWtlRWBIIGFhpZb7Eli0rhHITwA&oe=627BEB84" alt="" class="img-fluid">
         </div>
-        <div class="col-md-4 m-auto text-center wow fadeIn">
+        <div class="col-md-4 m-auto text-center wow fadeIn" data-wow-delay="0.15s">
           <h4 class="mt-4">糖徨恍若初見，紙願與你相戀</h4>
           <p class="text-muted">老一輩的懷舊零嘴，新一代的奇幻愛戀<br />讓你/妳回到童年純純的愛戀中！</p>
           <router-link to="/products" style="color: #000080;">>> 選購傳情小物</router-link>
@@ -102,7 +102,7 @@
         <div class="col-md-6">
           <img src="https://scontent-hkt1-2.xx.fbcdn.net/v/t39.30808-6/278410664_348113547337358_6324944992369293543_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=nFiXGQREQ1UAX8EIYNP&_nc_ht=scontent-hkt1-2.xx&oh=00_AT-V63DOj91CP2909l5BlPMBSw9kJM0MyCIYaHhD8fDtmA&oe=6263AEEF" alt="" class="img-fluid">
         </div>
-        <div class="col-md-4 m-auto text-center wow fadeIn">
+        <div class="col-md-4 m-auto text-center wow fadeIn" data-wow-delay="0.15s">
           <h4 class="mt-4">緣起百年，今生之戀</h4>
           <p class="text-muted">對你的思念寄予散落的星星<br />但願那點點的星光能照進你的窗前</p>
           <router-link to="/products" style="color: #000080;">>> 選購傳情小物</router-link>
