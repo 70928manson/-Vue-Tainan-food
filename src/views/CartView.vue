@@ -100,6 +100,13 @@ export default {
       })
     },
     reduceCartQty (id, qty, orderID) {
+      const swalWithBootstrapButtons = this.$swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const data = {
         product_id: id,
@@ -111,10 +118,35 @@ export default {
           this.getCartsData()
         })
       } else {
-        alert('購物品項即將被刪除')
-        this.$http.delete(`${url}/${orderID}`).then((res) => {
-          console.log(res)
-          this.getCartsData()
+        this.$swal({
+          title: '確定移除此產品嘛?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: '確定',
+          cancelButtonText: '否',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+              'Deleted!',
+              '刪除成功!',
+              'success'
+            )
+            this.$http.delete(`${url}/${orderID}`).then((res) => {
+              console.log(res)
+              this.getCartsData()
+            })
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === this.$swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              'Cancelled',
+              'Your imaginary file is safe :)',
+              'error'
+            )
+          }
         })
       }
     }

@@ -116,7 +116,12 @@ export default {
       }
       this.$http.post(url, { data }).then((res) => {
         console.log(res)
-        alert('成功加進購物車~')
+        this.$swal({
+          icon: 'success',
+          title: '成功加進購物車~!',
+          showConfirmButton: false,
+          timer: 1500
+        })
         // Navbar上顯示購物車數量
         emitter.emit('get-cart')
       })
