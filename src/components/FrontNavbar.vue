@@ -21,7 +21,7 @@
               <div class="d-flex">
                 <!--nav-item nav-link btn btn-sm -->
                 <router-link class="nav-item nav-link me-4 position-relative px-1" to="/cart">
-                  <p><i class="bi bi-cart-fill fs-7"></i></p>
+                  <div><i class="bi bi-cart-fill"></i></div>
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-top: 0.5rem;">
                     <!--可選串連-->
                      {{ cartData?.carts?.length }}
@@ -49,7 +49,7 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.$http.get(url)
         .then((res) => {
-          console.log('getCart回復', res)
+          // console.log('getCart回復', res)
           this.cartData = res.data.data
         })
     }

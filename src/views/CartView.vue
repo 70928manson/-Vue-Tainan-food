@@ -37,7 +37,11 @@
                     </div>
                   </td>
                   <td class="border-0 align-middle"><p class="mb-0 ms-auto">NT${{cart.total}}</p></td>
-                  <td class="border-0 align-middle"><i class="fas fa-times"></i></td>
+                  <td class="border-0 align-middle">
+                    <div>
+                      <button class="btn btn-outline-dark border-0 py-2"><i class="bi bi-x" style="fontSize: 175%;" @click="deleteProduct(cart.id)"></i></button>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -137,18 +141,41 @@ export default {
               console.log(res)
               this.getCartsData()
             })
-          } else if (
-            /* Read more about handling dismissals below */
-            result.dismiss === this.$swal.DismissReason.cancel
-          ) {
-            swalWithBootstrapButtons.fire(
-              'Cancelled',
-              'Your imaginary file is safe :)',
-              'error'
-            )
           }
         })
       }
+    },
+    deleteProduct (id) {
+      console.log('a')
+      const swalWithBootstrapButtons = this.$swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      this.$swal({
+        title: '確定移除此產品嘛?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: '確定',
+        cancelButtonText: '否',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Deleted!',
+            '刪除成功!',
+            'success'
+          )
+          this.$http.delete(`${url}/${id}`).then((res) => {
+            console.log(res)
+            this.getCartsData()
+          })
+        }
+      })
     }
   },
   mounted () {
