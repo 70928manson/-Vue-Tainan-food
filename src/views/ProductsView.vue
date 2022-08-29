@@ -1,7 +1,7 @@
 <template>
     <div class="position-relative d-flex align-items-center justify-content-center" style="min-height: 400px;">
       <div class="position-absolute" style="top:0; bottom: 0; left: 0; right: 0;
-      background-image: url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/179799063_130125802469468_1661810926114311187_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=1mTUrlKirRIAX-Qd-r2&_nc_ht=scontent-tpe1-1.xx&oh=00_AT_iPTgHtw5ZYJzBssnQOeF2MTU3Ha_BwsrxOdQIMA2-Og&oe=627F8A63);
+      background-image: url(https://upload.cc/i1/2022/08/29/WxONTQ.jpg?fbclid=IwAR1oqoGVQqsHTYIUIzouKRyJkKTGPw1CqcoO0RQOB2sP4GC_CAZXV4XJaLI);
       background-position: center center; opacity: 0.5; background-repeat:no-repeat; background-size:cover;"></div>
       <h2 class="fw-bold">傳情小物</h2>
     </div>
