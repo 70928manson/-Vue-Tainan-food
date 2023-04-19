@@ -7,6 +7,7 @@
             <table class="table">
               <thead>
                 <tr>
+                  <!-- <img src="../images/boxes.jpg" alt=""> -->
                   <th scope="col" class="border-0 ps-0">產品</th>
                   <th scope="col" class="border-0">數量</th>
                   <th scope="col" class="border-0">價錢</th>

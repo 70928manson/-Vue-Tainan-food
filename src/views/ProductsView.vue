@@ -1,8 +1,6 @@
 <template>
     <div class="position-relative d-flex align-items-center justify-content-center" style="min-height: 400px;">
-      <div class="position-absolute" style="top:0; bottom: 0; left: 0; right: 0;
-      background-image: url(https://upload.cc/i1/2022/08/29/WxONTQ.jpg?fbclid=IwAR1oqoGVQqsHTYIUIzouKRyJkKTGPw1CqcoO0RQOB2sP4GC_CAZXV4XJaLI);
-      background-position: center center; opacity: 0.5; background-repeat:no-repeat; background-size:cover;"></div>
+      <div class="position-absolute pictureFix"></div>
       <h2 class="fw-bold">傳情小物</h2>
     </div>
     <div class="container mt-md-5 mt-3 mb-7">
