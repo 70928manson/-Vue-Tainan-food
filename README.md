@@ -1,5 +1,7 @@
 # Vue - NCKU-History-convey-affection
 
+> 成功大學歷史系的傳情活動網頁
+
 ## 步驟
 1. 為專案加入樣式
   - npm導入bootstrap、bootstrap icons、Vue axios
