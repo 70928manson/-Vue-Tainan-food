@@ -3,20 +3,17 @@
 > 成功大學歷史系的傳情活動網頁
 
 ## 步驟
-1. 為專案加入樣式
+1. 專案建置
+  - Vue CLI
   - npm導入bootstrap、bootstrap icons、Vue axios
-  - 修改變數
-  - Bootstap icon
 
 2. 建立主要路由
   - 首頁
   - 產品列表
   - 單一產品(詳細資訊)
   - Navbar, footer
-
-3. 版型至Vue CLI
-
-4. 頁面製作
+ 
+3. 頁面製作
   - 首頁
   - 產品列表
   - 單一產品(詳細資訊)
