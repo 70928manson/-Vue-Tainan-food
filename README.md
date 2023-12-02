@@ -1,6 +1,6 @@
 # Vue - NCKU-History-convey-affection
 
-> 成功大學歷史系的傳情活動網頁~
+> 成功大學歷史系的傳情活動網頁
 
 ## 步驟
 1. 專案建置
